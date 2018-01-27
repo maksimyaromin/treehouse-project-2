@@ -1,0 +1,42 @@
+html {
+    @include regular(16px, 24px);
+}
+
+body {
+    color: $base-text-color;
+    background-color: transparent;
+}
+
+h1 {
+    @include thin(38px, 42px);
+    margin-bottom: 30px;
+}
+
+h2 {
+    @include thin(30px, 38px);
+    color: $base-text-color;
+}
+
+h3 {
+    @include bold(22px, 32px);
+    letter-spacing: 1px;
+    color: $base-text-color;
+}
+
+.small-text {
+    @include light(14px, 22px);
+    color: rgba($base-text-color, .6);
+}
+
+.extra-small-text {
+    @include light(12px, 20px);
+    color: rgba($base-text-color, .4);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}

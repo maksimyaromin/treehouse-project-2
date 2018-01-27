@@ -1,0 +1,35 @@
+.content {
+    padding-bottom: 72px;
+}
+
+.footer {
+    position: absolute;
+    height: 72px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+
+    .footer__copyright,
+    .footer__regards {
+        width: 49%;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include font(12px, 68px);
+        color: $inaccent-text-color;
+    }
+
+    .footer__copyright {
+        text-align: left;
+    }
+
+    .footer__regards {
+        text-align: right;
+        word-spacing: 2px;
+
+        .footer__hearts {
+            color: #f46f67;
+        }
+    }
+}

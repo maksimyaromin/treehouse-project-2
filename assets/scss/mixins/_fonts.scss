@@ -1,0 +1,25 @@
+@mixin thin($options...) {
+    font-weight: 100;
+    @include font($options...);
+}
+
+@mixin light($options...) {
+    font-weight: 300;
+    @include font($options...);
+}
+
+@mixin regular($options...) {
+    font-weight: 400;
+    @include font($options...);
+}
+
+@mixin bold($options...) {
+    font-weight: 700;
+    @include font($options...);
+}
+
+@mixin font($size, $line-height) {
+    font-family: Roboto, $compatible-fonts;
+    font-size: $size;
+    line-height: $line-height;
+}

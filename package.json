@@ -1,0 +1,23 @@
+{
+  "name": "treehouse-project-2",
+  "version": "1.0.0",
+  "description": "Example of Pagination and Content Filter Project after Unit 2 FSJS Treehouse courses",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Max Eremin",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
+    "babel-plugin-inline-json-import": "^0.2.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0-beta.0",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

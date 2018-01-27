@@ -1,0 +1,163 @@
+[
+    {
+        "id": 1,
+        "name": "Mikołaj Krzysztof Radziwiłł Czarny",
+        "email": "mikolay@radzivill.by",
+        "at": "1515-02-04T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Barbara Radziwiłłówna",
+        "email": "barbara@radzivill.by",
+        "at": "1520-12-06T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Mikołaj Krzysztof Radziwiłł",
+        "email": "mikolay_k@radzivill.by",
+        "at": "1549-08-02T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Krzysztof Mikołaj Radziwiłł",
+        "email": "piorun@radzivill.by",
+        "at": "1547-02-09T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/4.png"
+    },
+    {
+        "id": 5,
+        "name": "Jerzy Radziwiłł",
+        "email": "jerzy@radzivill.by",
+        "at": "1591-08-02T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Stanisław Radziwiłł",
+        "email": "stanislaw@radzivill.by",
+        "at": "1559-05-12T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Janusz Radziwiłł",
+        "email": "janusz@radzivill.by",
+        "at": "1579-07-02T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Zofia z Olelkowiczów Radziwiłłowa",
+        "email": "zofia@radzivill.by",
+        "at": "1585-05-11T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Krzysztof Radziwiłł",
+        "email": "kryzstof_junior@radzivill.by",
+        "at": "1585-03-22T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/9.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Albrycht Stanisław Radziwiłł",
+        "email": "stanislaw_a@radzivill.by",
+        "at": "1595-07-01T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/10.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Janusz Radziwiłł",
+        "email": "janusz_getman@radzivill.by",
+        "at": "1612-12-02T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/11.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Maria Radziwiłłowa",
+        "email": "maria@radzivill.by",
+        "at": "1625-01-01T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/12.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Bogusław Radziwiłł",
+        "email": "boguslaw@radzivill.by",
+        "at": "1620-05-03T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/13.png"
+    },
+    {
+        "id": 14,
+        "name": "Michał Kazimierz Radziwiłł",
+        "email": "michail@radzivill.by",
+        "at": "1625-10-26T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/14.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Dominik Mikołaj Radziwiłł",
+        "email": "dominik@radzivill.by",
+        "at": "1643-01-01T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/15.png"
+    },
+    {
+        "id": 16,
+        "name": "Ludwika Karolina Radziwiłł",
+        "email": "ludwika@radzivill.by",
+        "at": "1667-02-27T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/16.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Karol Stanisław Radziwiłł",
+        "email": "karol@radzivill.by",
+        "at": "1669-11-27T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/17.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Jan Mikołaj Radziwiłł",
+        "email": "jan@radzivill.by",
+        "at": "1681-05-17T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/18.png"
+    },
+    {
+        "id": 19,
+        "name": "Mikołaj Faustyn Radziwiłł",
+        "email": "mikolay@radzivill.by",
+        "at": "1688-05-21T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/19.png"
+    },
+    {
+        "id": 20,
+        "name": "Michał Kazimierz Radziwiłł Rybeńko",
+        "email": "michal_rybenko@radzivill.by",
+        "at": "1702-06-13T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/20.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Franciszka Urszula Radziwiłłowa",
+        "email": "franciszka@radzivill.by",
+        "at": "1705-02-13T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/21.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Udalryk Krzysztof Radziwiłł",
+        "email": "udarlik@radzivill.by",
+        "at": "1712-01-05T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/22.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Karol Stanisław Radziwiłł Panie Kochanku",
+        "email": "karol_kochanku@radzivill.by",
+        "at": "1734-02-27T15:56:05+00:00",
+        "avatar": "./assets/images/avatars/23.png"
+    }
+]

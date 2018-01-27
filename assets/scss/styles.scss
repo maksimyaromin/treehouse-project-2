@@ -1,0 +1,232 @@
+@import "compass/css3/box-sizing";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/utilities/general/clearfix";
+
+@import "common/variables";
+@import "mixins/fonts";
+
+@import "common/reset";
+@import "common/fonts";
+@import "common/type";
+@import "common/layout";
+@import "common/footer";
+
+.students-container {
+    width: 980px;
+    max-width: 90%;
+    height: auto;
+    margin: 49px auto;
+    padding: 0 49px 49px;
+    background-color: white;
+    border-radius: 4px;
+    overflow: auto;
+    @include box-shadow(2px 2px 1px 1px rgba(0, 0, 0, .3));
+
+    &__header {
+        margin: 21px 0 0;
+        @include bold(18px, 49px);
+        letter-spacing: 1px;
+    }
+}
+
+.footer-wrapper {
+    width: 980px;
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+%active-placeholder {
+    font-size: 10px;
+    top: -5px;
+    color: $base-text-color;
+}
+
+.search-box {
+    margin-bottom: 21px;
+
+    &__form &__input {
+        position: relative;
+        height: 36px;
+
+        input[type~="search"], input[type~="text"] {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            display: inline-block;
+            border: 1px solid $base-border-color;
+            padding: 0 12px;
+            border-radius: 2px;
+            color: $inaccent-text-color;
+            @include regular(14px, 34px);
+            @include transition(all 250ms ease-in);
+
+            &:hover {
+                border-color: darken($base-border-color, 10%);
+            }
+
+            &:focus {
+                border-color: $accent-border-color;
+                color: $accent-text-color;
+
+                & + .active-placeholder {
+                    @extend %active-placeholder;
+                }
+            }
+
+            &.fill + .active-placeholder {
+                @extend %active-placeholder;
+            }
+        }
+
+        
+    }
+}
+
+.active-placeholder {
+    position: absolute;
+    width: auto;
+    max-width: 400px;
+    background-color: white;
+    padding: 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    left: 9px;
+    top: 11px;
+    @include light(14px, 1);
+    color: $inaccent-text-color;
+    @include transition(all 250ms ease-in);
+}
+
+.students {
+    padding: 21px 0;
+
+    &__list &__item {
+        min-height: 72px;
+        &:not(:last-child) {
+            border-bottom: 1px solid $base-border-color;
+        }
+        @include pie-clearfix;
+    }
+}
+
+.student {
+    position: relative;
+    padding: 0 0 0 80px;
+
+    /* В реальном проекте я бы использовал что-то типо sharp
+       или ImageProcessor для того чтобы картинки возможно разных
+       размеров не казались замыленными. Но в этот раз использовал
+       такой нехитрый трюк, который не для всех картинок конечно же
+       будет выглядеть одинаково красиво */
+    &__avatar {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: rgba($fill-background-color, .4);
+        left: 12px;
+        top: 12px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__contact, .mark {
+        display: inline-block;
+        padding: 12px 0;
+    }
+
+    &__contact {
+        float: left;
+        
+    }
+
+    &__name {
+        @include bold(16px, 28px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $accent-text-color;
+    }
+
+    &__email {
+        position: relative;
+        display: inline-block;
+        @include light(14px, 20px);
+
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-image: linear-gradient(to right, white 50%, $accent-background-color 51%);
+            background-size: 200%;
+            background-position: 0%;
+            @include transition(background-position 250ms ease-in);
+        }
+
+        &:hover:after {
+            background-position: 100%;
+        }
+    }
+
+    .mark {
+        float: right;
+        padding: 29px;
+        @include thin(14px, 1);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $inaccent-text-color;
+
+        time {
+            font-weight: 300;
+        }
+    }
+}
+
+.pager-box {
+    position: relative;
+    margin-top: 35px;
+    padding-right: 100px;
+    .pager {
+        padding: 0 8px;
+        .page {
+            display: inline-block;
+            width: 22px;
+            text-align: center;
+            cursor: pointer;
+            color: $inaccent-text-color;
+            @include bold(14px, 22px);
+            @include transition(color 250ms ease-in);
+
+            &.state_active,
+            &:hover {
+                color: $accent-text-color;
+            }
+        }
+    }
+
+    .pager__range-mark {
+        position: absolute;
+        right: 29px;
+        top: 2px;
+        color: $inaccent-text-color;
+        @include light(12px, 22px);
+    }
+}
+
+.no-students {
+    padding: 0 28px;
+    color: $inaccent-text-color;
+    @include light(18px, 72px);
+    border: 1px solid $base-border-color;
+    border-radius: 4px;
+    text-align: center;
+}

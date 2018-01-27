@@ -1,0 +1,100 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+ul { list-style: none; }
+
+*, *:after, *:before { outline: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+a { text-decoration: none; color: rgba(0, 0, 0, 0.87); }
+
+/* Просто лень скачивать файлы со шрифтом. Обычно я так не делаю, но не удержался
+*/
+html { font-weight: 400; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; }
+
+body { color: rgba(0, 0, 0, 0.87); background-color: transparent; }
+
+h1 { font-weight: 100; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 38px; line-height: 42px; margin-bottom: 30px; }
+
+h2 { font-weight: 100; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 30px; line-height: 38px; color: rgba(0, 0, 0, 0.87); }
+
+h3 { font-weight: 700; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 22px; line-height: 32px; letter-spacing: 1px; color: rgba(0, 0, 0, 0.87); }
+
+.small-text { font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; color: rgba(0, 0, 0, 0.6); }
+
+.extra-small-text { font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20px; color: rgba(0, 0, 0, 0.4); }
+
+.text-uppercase { text-transform: uppercase; }
+
+.text-lowercase { text-transform: lowercase; }
+
+html { height: 100% !important; }
+
+html, body { overflow-x: auto; overflow-y: auto; }
+
+body { min-height: 100%; padding-left: 0; }
+
+.content { position: absolute; width: 100%; min-height: 100%; background-color: #cccccc; }
+
+.content { padding-bottom: 72px; }
+
+.footer { position: absolute; height: 72px; width: 100%; left: 0; bottom: 0; }
+.footer .footer__copyright, .footer .footer__regards { width: 49%; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 68px; color: rgba(0, 0, 0, 0.54); }
+.footer .footer__copyright { text-align: left; }
+.footer .footer__regards { text-align: right; word-spacing: 2px; }
+.footer .footer__regards .footer__hearts { color: #f46f67; }
+
+.students-container { width: 980px; max-width: 90%; height: auto; margin: 49px auto; padding: 0 49px 49px; background-color: white; border-radius: 4px; overflow: auto; -moz-box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3); -webkit-box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3); box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3); }
+.students-container__header { margin: 21px 0 0; font-weight: 700; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 18px; line-height: 49px; letter-spacing: 1px; }
+
+.footer-wrapper { width: 980px; max-width: 90%; height: 100%; margin: auto; }
+
+.search-box__form .search-box__input input[type~="search"]:focus + .active-placeholder, .search-box__form .search-box__input input[type~="text"]:focus + .active-placeholder, .search-box__form .search-box__input input[type~="search"].fill + .active-placeholder, .search-box__form .search-box__input input[type~="text"].fill + .active-placeholder { font-size: 10px; top: -5px; color: rgba(0, 0, 0, 0.87); }
+
+.search-box { margin-bottom: 21px; }
+.search-box__form .search-box__input { position: relative; height: 36px; }
+.search-box__form .search-box__input input[type~="search"], .search-box__form .search-box__input input[type~="text"] { position: relative; width: 100%; max-width: 480px; display: inline-block; border: 1px solid #dbdbdb; padding: 0 12px; border-radius: 2px; color: rgba(0, 0, 0, 0.54); font-weight: 400; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 34px; -moz-transition: all 250ms ease-in; -o-transition: all 250ms ease-in; -webkit-transition: all 250ms ease-in; transition: all 250ms ease-in; }
+.search-box__form .search-box__input input[type~="search"]:hover, .search-box__form .search-box__input input[type~="text"]:hover { border-color: #c2c2c2; }
+.search-box__form .search-box__input input[type~="search"]:focus, .search-box__form .search-box__input input[type~="text"]:focus { border-color: #E64A19; color: #0091EA; }
+
+.active-placeholder { position: absolute; width: auto; max-width: 400px; background-color: white; padding: 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; left: 9px; top: 11px; font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1; color: rgba(0, 0, 0, 0.54); -moz-transition: all 250ms ease-in; -o-transition: all 250ms ease-in; -webkit-transition: all 250ms ease-in; transition: all 250ms ease-in; }
+
+.students { padding: 21px 0; }
+.students__list .students__item { min-height: 72px; *zoom: 1; }
+.students__list .students__item:not(:last-child) { border-bottom: 1px solid #dbdbdb; }
+.students__list .students__item:after { content: ""; display: table; clear: both; }
+
+.student { position: relative; padding: 0 0 0 80px; /* В реальном проекте я бы использовал что-то типо sharp или ImageProcessor для того чтобы картинки возможно разных размеров не казались замыленными. Но в этот раз использовал такой нехитрый трюк, который не для всех картинок конечно же будет выглядеть одинаково красиво */ }
+.student__avatar { position: absolute; width: 48px; height: 48px; text-align: center; border-radius: 50%; overflow: hidden; background-color: rgba(204, 204, 204, 0.4); left: 12px; top: 12px; }
+.student__avatar img { width: 100%; }
+.student__contact, .student .mark { display: inline-block; padding: 12px 0; }
+.student__contact { float: left; }
+.student__name { font-weight: 700; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 28px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #0091EA; }
+.student__email { position: relative; display: inline-block; font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; }
+.student__email:after { content: ""; display: block; width: 100%; height: 2px; background-image: linear-gradient(to right, white 50%, #E64A19 51%); background-size: 200%; background-position: 0%; -moz-transition: background-position 250ms ease-in; -o-transition: background-position 250ms ease-in; -webkit-transition: background-position 250ms ease-in; transition: background-position 250ms ease-in; }
+.student__email:hover:after { background-position: 100%; }
+.student .mark { float: right; padding: 29px; font-weight: 100; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: rgba(0, 0, 0, 0.54); }
+.student .mark time { font-weight: 300; }
+
+.pager-box { position: relative; margin-top: 35px; padding-right: 100px; }
+.pager-box .pager { padding: 0 8px; }
+.pager-box .pager .page { display: inline-block; width: 22px; text-align: center; cursor: pointer; color: rgba(0, 0, 0, 0.54); font-weight: 700; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; -moz-transition: color 250ms ease-in; -o-transition: color 250ms ease-in; -webkit-transition: color 250ms ease-in; transition: color 250ms ease-in; }
+.pager-box .pager .page.state_active, .pager-box .pager .page:hover { color: #0091EA; }
+.pager-box .pager__range-mark { position: absolute; right: 29px; top: 2px; color: rgba(0, 0, 0, 0.54); font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 22px; }
+
+.no-students { padding: 0 28px; color: rgba(0, 0, 0, 0.54); font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 18px; line-height: 72px; border: 1px solid #dbdbdb; border-radius: 4px; text-align: center; }

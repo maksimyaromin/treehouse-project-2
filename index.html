@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- В моем приложении деградация в связи с отключенным скриптом выполняется
+         с помощью наличия другого файла, в котором список студентов выведен на страницу целиком.
+         Скорее всего в реальном приложении этот список будет храниться где-то в базе и загружаться
+         при помощи AJAX после загрузки страницы. Поэтому я решил "эмитировать" это поведение при помощи 
+         json файла. Если же скрипт отключен, то в реальном приложении вы можете разбивать студентов на
+         страницы на сервере и тоже организовать пагинацию. Но так как реализация серверной части 
+         за рамками данного задания я просто загружаю весь список на страницу. -->
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=index-without-js.html">
+    </noscript>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Princes of the Radziwills</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+    <div class="content">
+        <div class="students-container">
+            <header class="students-container__header">
+                <span class="text-uppercase">Princes</span>
+            </header>
+            <section class="students"></section>
+        </div>
+        <!-- Website footer contains copyright data and love from Minsk -->
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="footer__copyright">
+                    <span id="year"></span>
+                    &copy;
+                    <span>Max Eremin</span>
+                </div>
+                <div class="footer__regards">
+                    <span>With <b class="footer__hearts">&hearts;</b> from Minsk</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./dist/app.js"></script>
+</body>
+</html>
