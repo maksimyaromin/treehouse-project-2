@@ -19,5 +19,9 @@
   },
   "dependencies": {
     "jquery": "^3.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ermaxnet/threehouse-project-2.git"
   }
 }
