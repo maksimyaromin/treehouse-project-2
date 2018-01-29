@@ -72,7 +72,7 @@ body { min-height: 100%; padding-left: 0; }
 .search-box__form .search-box__input input[type~="search"]:hover, .search-box__form .search-box__input input[type~="text"]:hover { border-color: #c2c2c2; }
 .search-box__form .search-box__input input[type~="search"]:focus, .search-box__form .search-box__input input[type~="text"]:focus { border-color: #E64A19; color: #0091EA; }
 
-.active-placeholder { position: absolute; width: auto; max-width: 400px; background-color: white; padding: 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; left: 9px; top: 11px; font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1; color: rgba(0, 0, 0, 0.54); -moz-transition: all 250ms ease-in; -o-transition: all 250ms ease-in; -webkit-transition: all 250ms ease-in; transition: all 250ms ease-in; }
+.active-placeholder { position: absolute; width: auto; max-width: 400px; background-color: white; padding: 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; left: 9px; top: 11px; font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1; color: rgba(0, 0, 0, 0.54); -moz-transition: all 250ms ease-in; -o-transition: all 250ms ease-in; -webkit-transition: all 250ms ease-in; transition: all 250ms ease-in; pointer-events: none; }
 
 .students { padding: 21px 0; }
 .students__list .students__item { min-height: 72px; *zoom: 1; }

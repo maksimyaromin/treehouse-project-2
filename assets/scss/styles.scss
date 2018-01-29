@@ -98,6 +98,7 @@
     @include light(14px, 1);
     color: $inaccent-text-color;
     @include transition(all 250ms ease-in);
+    pointer-events: none;
 }
 
 .students {
