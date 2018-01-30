@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
 
@@ -23,7 +22,7 @@ ul { list-style: none; }
 
 a { text-decoration: none; color: rgba(0, 0, 0, 0.87); }
 
-/* Просто лень скачивать файлы со шрифтом. Обычно я так не делаю, но не удержался
+/* I was lazy enough to download font files.  It is not common behavior for me, but I couldn't stand it.
 */
 html { font-weight: 400; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; }
 
