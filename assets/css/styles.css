@@ -79,7 +79,7 @@ body { min-height: 100%; padding-left: 0; }
 .students__list .students__item:not(:last-child) { border-bottom: 1px solid #dbdbdb; }
 .students__list .students__item:after { content: ""; display: table; clear: both; }
 
-.student { position: relative; padding: 0 0 0 80px; /* В реальном проекте я бы использовал что-то типо sharp или ImageProcessor для того чтобы картинки возможно разных размеров не казались замыленными. Но в этот раз использовал такой нехитрый трюк, который не для всех картинок конечно же будет выглядеть одинаково красиво */ }
+.student { position: relative; padding: 0 0 0 80px; /* In real life project I would surely use smth like sharp or ImageProcessor in order to avoid image blur for different-sized photo. But this time I used  that simple trick, which for sure wouldn't work good enough for all images  */ }
 .student__avatar { position: absolute; width: 48px; height: 48px; text-align: center; border-radius: 50%; overflow: hidden; background-color: rgba(204, 204, 204, 0.4); left: 12px; top: 12px; }
 .student__avatar img { width: 100%; }
 .student__contact, .student .mark { display: inline-block; padding: 12px 0; }

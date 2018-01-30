@@ -117,11 +117,11 @@
     position: relative;
     padding: 0 0 0 80px;
 
-    /* В реальном проекте я бы использовал что-то типо sharp
-       или ImageProcessor для того чтобы картинки возможно разных
-       размеров не казались замыленными. Но в этот раз использовал
-       такой нехитрый трюк, который не для всех картинок конечно же
-       будет выглядеть одинаково красиво */
+    /* In real life project I would surely use smth like sharp
+       or ImageProcessor in order to avoid image blur for different-sized photo.
+       But this time I used 
+       that simple trick, which for sure wouldn't work good enough
+       for all images  */
     &__avatar {
         position: absolute;
         width: 48px;

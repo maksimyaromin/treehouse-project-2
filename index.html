@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- В моем приложении деградация в связи с отключенным скриптом выполняется
-         с помощью наличия другого файла, в котором список студентов выведен на страницу целиком.
-         Скорее всего в реальном приложении этот список будет храниться где-то в базе и загружаться
-         при помощи AJAX после загрузки страницы. Поэтому я решил "эмитировать" это поведение при помощи 
-         json файла. Если же скрипт отключен, то в реальном приложении вы можете разбивать студентов на
-         страницы на сервере и тоже организовать пагинацию. Но так как реализация серверной части 
-         за рамками данного задания я просто загружаю весь список на страницу. -->
+    <!-- Graceful degradation in my application is implemented with a help of separate file, 
+		 where the list of princes is displayed on page fully. 
+         At real application an array is likely to be stored in data base and downloaded 
+         with AJAX after page load. For that reason  I decided to simulate the situation with a help of  
+         json file. Whether script is disabled on real application one can organize server based pagination.
+         As far as back-end realization lays aside the current project I simply  
+         display the whole list on page. -->
     <noscript>
         <meta http-equiv="refresh" content="0;url=index-without-js.html">
     </noscript>

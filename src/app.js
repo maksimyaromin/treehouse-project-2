@@ -1,9 +1,9 @@
 import source from "./source/students.json";
 
 {
-    /* Простая реализация плавающего плэйсхолдера. В реальном проекте
-       вы наверняка захотите анализировать есть ли в поле значение изначально,
-       но для нашего примера это лишнее
+    /* Simple realization of float placeholder. In real life project
+       you would surely like to analyze whether the field has a value from the start.
+       But I consider it needless for our example.
     */
     const activePlaceholder = (element) => {
         const action = () => {
@@ -16,24 +16,24 @@ import source from "./source/students.json";
         element.on("blur clear-search-field", action);
     };
 
-    /* Логика реализации списка инкапсулировано в jQuery-расширение.
-       Т. е. выполнение задания выполнено в виде простого jQuery-плагина
+    /* Array realization logics encapsulated in jQuery-extension.
+       i.e. the task is realized as a simple jQuery-plugin.
     */
     $.fn.listItems = function(options) {
-        // Настройки по-умолчанию
+        // Default settings
         const defaultOptions = {
             total: 10,
             enabledSearchBox: true,
             searchPlaceholder: "Start entering name or email",
             noData: 
                 `<div class="no-students">
-                    <span>Ups! No students for display</span>
+                    <span>Sorry, no princes here</span>
                 </div>`,
             source: new Array(0)
         };
         options = Object.assign({}, defaultOptions, options);
 
-        // Некоторые глобальные для плагина переменные
+        // Some global for plugin variables 
         const context = this;
         let listContext = null;
         let pagerContext = null;
@@ -41,8 +41,8 @@ import source from "./source/students.json";
         let dirty = false;
         let hasPager = false;
         
-        /* Состояние приложение. Отдадим дань уважения Реакту, после работы на нем руки сами тянуться
-           реализовывать подобную логику подобным образом
+        /* Application status. Let's pay some respect to React, as far as after long practice with it 
+           my hands automatically long to realize logics in that way.
         */
         let state = {
             page: 0,
@@ -52,12 +52,11 @@ import source from "./source/students.json";
             totalPages: 0
         };
 
-        /* Некоторые вспомогательные методы для плагина инкапсулированы в отдельное пространство имен
-           для простоты
+        /* To make it more simple some plugin helper methods encapsulated into separate name space. 
         */
         const API = {
-            /* Построение поля поиска. В моем примере я решил не делать кнопку для поиска (надеюсь это 
-               не слишком большое нарушение условия задания). Я сделал простую реализацию автокомплита.
+            /* Search field mapping. In my example I decided not to make a search button (hope, is not a
+               too big violation of task conditions). I made a simple autocomplete here.
             */
             buildSearchBox() {
                 if(!this.hasSource()) { return; }
@@ -75,7 +74,7 @@ import source from "./source/students.json";
                 const search = searchBox.find(`[type="search"], [type="text"]`);
                 activePlaceholder(search);
 
-                // На всякий случай отключить отправку форму по нажатию Ентер
+                // Just in case it is better to disable form submission on Enter button pressing
                 searchBox.find("form").on("keyup keypress", e => {
                     const keyCode = e.keyCode || e.which;
                     if (keyCode === 13) { 
@@ -83,14 +82,13 @@ import source from "./source/students.json";
                         return false;
                     }
                 });
-                /* Собственно логика поиска. По срабатыванию события input если присутствует введенное
-                   значение, то ищем совпадение среди имен и имэйлов. Если значение отсутсвует, то загружаем
-                   исходный список. Разумеется, в реальном проекте вам может захотеться ограничить начало поиска
-                   определенным количеством символов или же частоту вызовов методом на подобие debounce, но тут
-                   я этого не делал. Опять же, да, я знаю, что событие input не работает в старых IE
-                   и для них существует onpropertychange, но нам в 2018 не следует ориентироваться на 
-                   IE8. ВАЖНО: фильтр осуществляет поиск по наличию введенного буквосочетания (просто мне
-                   кажется что так инетерсней)
+                /* Search logics. On input event expiration if a certain value entered 
+                    then we start searching for  matching among names and e-mails. If the value is empty then  
+                    a source list is displaying. Of course in real life project you might want to limit search start with
+                    a certain quantity of symbols or call frequency by using kind of debounce method.  But
+                    I didn't implement it here. By the way I am aware of input event doesn't work in old version IE and
+                    there exist onpropertychange to resolve it, but we shouldn't focus on IE8 in our 2018. 
+                    IMPORTANT: filter searches by  letter combination entered (I just consider it to be more interesting)
                 */
                 search.on("input", (e) => {
                     const value = $(e.target).val();
@@ -103,8 +101,7 @@ import source from "./source/students.json";
                         const newState = {
                             source, page: 0
                         };
-                        /*Сохраняем выбранную страницу, для того чтобы на нее вернуться, когда пользователь
-                          очистит поле поиска
+                        /*Save selected page to return to it when a user cleans a search field 
                         */
                         if(state.page) {
                             newState.oldPage = state.page;
@@ -125,8 +122,8 @@ import source from "./source/students.json";
                     }
                 });
             },
-            /* Строим пагинацию если она нужна (т. е. если у нас данных больше чем на одну страницу).
-               Построение основано на текущем состоянии объекта state 
+            /* Build pagination in case of need (i.e.the data array is more than for one page).
+               Build is based on object current state 
             */
             buildPager() {
                 let pager = 
@@ -149,14 +146,14 @@ import source from "./source/students.json";
                 context.after(pager);
                 pagerContext = $(".pager-box");
             },
-            /* Добавление в ДОМ элемента списка. Методо очень прост, но я вынес его отдельно для
-               сохранения модульной системы плагина (и на будущее, мало ли что понадобиться)
+            /* Adding to list DOM element. The method is quite simple, but I separated it
+               to save a plugin modal system (and just in case we need that in future)
             */
             buildList() {
                 listContext = $(`<ul class="students__list"></ul>`);
                 context.prepend(listContext);
             },
-            /* Добавить новый элемент в список по шаблону
+            /* Add new element to the list according to template
             */
             buildItem(item) {
                 listContext.append(
@@ -181,8 +178,8 @@ import source from "./source/students.json";
                     </li>`
                 );
             },
-            /* Удаление всех программно созданных элементов из ДОМ и очистка 
-               глобальных переменных перед перерисовкой списка
+            /* Deleting programmatically created elements from DOM and cleaning global variables 
+	           before list rebuild
             */
             clear() {
                 if(dirty) {
@@ -196,7 +193,7 @@ import source from "./source/students.json";
                     pagerContext = null;
                 }
             },
-            // Получение элементов для текущей страницы из состояния
+            // Get elements for current page from state
             getItems() {
                 const lastIndex = state.total - 1;
                 const startIndex = state.page * options.total;
@@ -214,7 +211,7 @@ import source from "./source/students.json";
                 }
                 return items;
             },
-            // Добавить все элементы для текущей страницы в список
+            // Add all elements for current page to the list
             buildItems() {
                 if(!listContext) { return; }
                 listContext.html("");
@@ -223,7 +220,7 @@ import source from "./source/students.json";
                     this.buildItem(item);
                 }
             },
-            // Подключение возможных возможных событий для списка (например, перехода по страницам)
+            // Add possible events for the list (i.e. page transitions)
             bindListEvents() {
                 if(hasPager) {
                     const pages = pagerContext.find(".page");
@@ -240,14 +237,14 @@ import source from "./source/students.json";
                     });
                 }
             },
-            /* Есть ли в состоянии элементы для отображения? Тут я схитрил. Этот метод вызывается два раза:
-               каждый раз при построении нового списка и когда отрисовывается поле для поиска. Поле для поиска
-               отрисовывается один раз и поэтому метод вернет тру только если весь набор элементов для списка
-               больше нуля.*/
+            /* Does a state have any elements to display? Here I dodged a bit. The method is called twice:
+               each time when a new list is building and when search field is being depicted. Search field 
+               is displaying only once, that is why the method will return true only if set of element  is more than null.
+            */
             hasSource() {
                 return state.source instanceof Array && state.source.length;
             },
-            // Вызвать все необходимые методы попорядку и нарисовать список
+            // Call all needed methods and display list
             build() {
                 this.clear();
                 if(!this.hasSource()) {
@@ -273,7 +270,7 @@ import source from "./source/students.json";
             }
         };
 
-        /* Отрисовка списка при запуске прилодения и, если включено, поля поиска
+        /* Display list at application start and if search field is enabled
         */
         const init = () => {
             API.build();

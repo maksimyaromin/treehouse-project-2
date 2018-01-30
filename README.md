@@ -1,38 +1,38 @@
 # Pagination & Content Filter
-Возможная реализация второго проекта для программы Full-Stack JS Developer.
+Second project potential realization for Full-Stack JS Developer Program. 
 
-Для реализации задания использовалась библиотека jQuery. Сама реализация представлена в виде простого плагина. Применить
-данный плагин можно к любому элементу DOM следующим образом:
+For the purpose of a current task I used jQuery library. The realization is expressed as a plugin. One can
+apply it to any DOM element as follows:
 ```js
     $("{your selector here}").listItems({ ...your options here });
 ```
 
-#### Плагин имеет несколько настроек:
-| Настройка | Описание | Значение по-умлочнию |
+#### Plugin has a several settings:
+| Setting | Description | Default value |
 | --- | --- | --- |
-| `total` | Количество элементов на странице | *10* |
-| `enabledSearchBox` | Необходимо ли включать поле для поиска | *true* |
-| `searchPlaceholder` | Подсказка для поиска | *Start entering name or email* |
-| `noData` | HTML разметка элемента, который отобразится в случае отсутствия элементов в списке | ```html <div class="no-students"> <span>Ups! No students for display</span> </div> ``` |
-| `source` | Список элементов | ```js new Array(0) ``` |
+| `total` | Page element quantity  | *10* |
+| `enabledSearchBox` | Search field enabled | *true* |
+| `searchPlaceholder` | Search hint | *Start entering name or email* |
+| `noData` | HTML element markup, which displays in case of data absence  | ```html <div class="no-students"> <span>Sorry, no princes here</span> </div> ``` |
+| `source` | element list | ```js new Array(0) ``` |
 
 
-По-умолчанию список элементов хранится в файле *./app/source/students.json*. Для того, чтобы использовать этот файл в приложении используется Babel и плагин *inline-json-import*.
+Default file with element array *./app/source/students.json*. To run this file in application Babel and  *inline-json-import* plugin are used.
 
-Если приложение нужно будет пересобрать с другим списком элементов, то можно воспользоваться gulp-задачей:
+If one needs to reassemble an application with another element array gulp-task might be used: 
 ```shell
     gulp build
 ```
 
-В случае отключенного JS в браузере запрос будет перенаправлен на страницу /index-without-js.html, где отобразится весь список без пагинации и формы поиска (см. комментарии для другой информации).
+In case of  browser JS disabling the request will be addressed to the page /index-without-js.html, where the whole list will be displayed with no pagination and search box (see comments for additional information).
 
-Как и прежде в качесве препроцессора я использовал SCSS. И как и прежде, для запуска приложения можно воспользоваться командами:
+As before I used SCSS as preprocessor. And as usual, to start a project the following commands might be used:
 ```shell
     npm install
     npm start
 ```
-#### В этот раз настоятельно рекомендую восстановить хотя бы jQuery при помощи npm. В противном случае приложение работать не будет.
+#### This time I strongly suggest to  restore at least jQuery using npm. Otherwise an application  will not work.
 
-Вместо списка студентов для большего интереса я использовал список представителей рода белорусских, польских и литовских магнатов князей [Радзивиллов](https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B7%D0%B8%D0%B2%D0%B8%D0%BB%D0%BB%D1%8B). Информация о именах и датах рождения князей взята с Википедии.
+In order to quicken interest instead of list of students  I used a list of Belorussian grandee, Polish and Lithuanian magnate princes [Radzivill](https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B7%D0%B8%D0%B2%D0%B8%D0%BB%D0%BB%D1%8B). Information on prince's names and dates of birth is taken from Wikipedia.
 
 ### I hope you will enjoy it. Max Eremin
