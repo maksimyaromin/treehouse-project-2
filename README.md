@@ -53,3 +53,7 @@ If you are not agree with me please give me a detailed answer why my application
 }
 ```
 You can also delete any quantity of objects from array. You can be sure, you wouldn't break anything.
+3. Thank you, now I understand your detailed comments. I've deleted the noscript sulution. To built the application in real life project you would probably need to create html pages on server (i.e. with a help of view engine like Razor or ejs). Whether you need to load elements list from server (database sever) after page rendering you might need to use my previous solution to maintain disabled JavaScript. To see the result please open index.html file. Also I've added index-46.html to prove that the script will work with different size array. 
+
+#### Thank you for your reviews!
+

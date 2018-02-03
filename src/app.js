@@ -1,4 +1,4 @@
-import source from "./source/students.json";
+//import source from "./source/students.json";
 
 {
     /* Simple realization of float placeholder. In real life project
