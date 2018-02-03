@@ -164,16 +164,16 @@ var source = [{
       total: 10,
       enabledSearchBox: true,
       searchPlaceholder: "Start entering name or email",
-      noData: "<div class=\"no-students\">\n                    <span>Sorry, no princes here</span>\n                </div>",
-      source: new Array(0)
+      noData: "<div class=\"no-students\">\n                    <span>Sorry, no princes here</span>\n                </div>"
     };
     options = Object.assign({}, defaultOptions, options); // Some global for plugin variables 
 
     var context = this;
-    var listContext = null;
     var pagerContext = null;
-    var dirty = false;
+    var listContext = context.find("ul");
+    var noData = $(options.noData);
     var hasPager = false;
+    var source = context.find(options.itemSelector);
     /* Application status. Let's pay some respect to React, as far as after long practice with it 
        my hands automatically long to realize logics in that way.
     */
@@ -181,7 +181,7 @@ var source = [{
     var state = {
       page: 0,
       oldPage: 0,
-      source: options.source,
+      source: source,
       total: 0,
       totalPages: 0
     };
@@ -225,13 +225,15 @@ var source = [{
           var value = $(e.target).val();
 
           if (value) {
-            var _source = options.source.filter(function (item) {
+            var result = source.filter(function (index, element) {
+              element = $(element);
+              var name = element.find("[class*=\"name\"]").text().trim();
+              var email = element.find("[class*=\"email\"]").text().trim();
               var pattern = new RegExp(value, "i");
-              return pattern.test(item.name) || pattern.test(item.email);
+              return pattern.test(name) || pattern.test(email);
             });
-
             var newState = {
-              source: _source,
+              source: result,
               page: 0
             };
             /*Save selected page to return to it when a user cleans a search field 
@@ -246,7 +248,7 @@ var source = [{
             _this.build();
           } else {
             state = Object.assign({}, state, {
-              source: options.source,
+              source: source,
               page: state.oldPage
             });
 
@@ -271,38 +273,22 @@ var source = [{
         pagerContext = $(".pager-box");
       },
 
-      /* Adding to list DOM element. The method is quite simple, but I separated it
-         to save a plugin modal system (and just in case we need that in future)
-      */
-      buildList: function buildList() {
-        listContext = $("<ul class=\"students__list\"></ul>");
-        context.prepend(listContext);
-      },
-
-      /* Add new element to the list according to template
-      */
-      buildItem: function buildItem(item) {
-        listContext.append("<li class=\"students__item student\" data-item-id=\"".concat(item.id, "\">\n                        <div class=\"student__avatar\">\n                            <img alt=\"").concat(item.name, "\" src=\"").concat(item.avatar, "\" />\n                        </div>\n                        <div class=\"student__contact\">\n                            <div class=\"student__name\">\n                                <span>").concat(item.name, "</span>\n                            </div>\n                            <div class=\"student__email\">\n                                <a href=\"mailto:").concat(item.email, "\">").concat(item.email, "</a>\n                            </div>\n                        </div>\n                        <div class=\"mark\">\n                            <span>Born</span>\n                            <time datetime=\"").concat(item.at, "\">\n                                ").concat(new Date(item.at).toLocaleDateString(), "\n                            </time>\n                        </div>\n                    </li>"));
-      },
-
       /* Deleting programmatically created elements from DOM and cleaning global variables 
       before list rebuild
       */
       clear: function clear() {
-        if (dirty) {
-          context.html("");
-          dirty = false;
-          listContext = null;
-        }
-
         if (hasPager && pagerContext) {
           pagerContext.remove();
           hasPager = false;
           pagerContext = null;
         }
       },
-      // Get elements for current page from state
-      getItems: function getItems() {
+      // Hide all items before control was builded
+      hideItems: function hideItems() {
+        source.hide();
+      },
+      // Show items on selected page
+      showItems: function showItems() {
         var lastIndex = state.total - 1;
         var startIndex = state.page * options.total;
         var endIndex = startIndex + options.total - 1;
@@ -311,10 +297,8 @@ var source = [{
           endIndex = lastIndex;
         }
 
-        var items = new Array(0);
-
         for (var i = startIndex; i <= endIndex; i++) {
-          items.push(state.source[i]);
+          $(state.source[i]).show();
         }
 
         if (hasPager) {
@@ -322,39 +306,7 @@ var source = [{
           markRange.text("".concat(startIndex + 1, " - ").concat(endIndex + 1));
         }
 
-        return items;
-      },
-      // Add all elements for current page to the list
-      buildItems: function buildItems() {
-        if (!listContext) {
-          return;
-        }
-
-        listContext.html("");
-        var items = this.getItems();
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
-
-        try {
-          for (var _iterator = items[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var _item = _step.value;
-            this.buildItem(_item);
-          }
-        } catch (err) {
-          _didIteratorError = true;
-          _iteratorError = err;
-        } finally {
-          try {
-            if (!_iteratorNormalCompletion && _iterator.return != null) {
-              _iterator.return();
-            }
-          } finally {
-            if (_didIteratorError) {
-              throw _iteratorError;
-            }
-          }
-        }
+        listContext.find("".concat(options.itemSelector, ":visible")).last().addClass("last_item");
       },
       // Add possible events for the list (i.e. page transitions)
       bindListEvents: function bindListEvents() {
@@ -370,7 +322,9 @@ var source = [{
               page: page.data("page")
             });
 
-            _this2.buildItems();
+            _this2.hideItems();
+
+            _this2.showItems();
           });
         }
       },
@@ -380,19 +334,23 @@ var source = [{
          is displaying only once, that is why the method will return true only if set of element  is more than null.
       */
       hasSource: function hasSource() {
-        return state.source instanceof Array && state.source.length;
+        return state.source.length;
       },
       // Call all needed methods and display list
       build: function build() {
         this.clear();
 
         if (!this.hasSource()) {
-          return context.html(options.noData);
+          listContext.hide();
+          return noData.appendTo(context);
+        } else {
+          noData.remove();
+          listContext.show();
         }
 
+        this.hideItems();
         var listSize = state.source.length;
         var pagesCount = Math.ceil(listSize / options.total);
-        this.buildList();
         state = Object.assign({}, state, {
           total: listSize,
           totalPages: pagesCount
@@ -405,8 +363,7 @@ var source = [{
           hasPager = false;
         }
 
-        this.buildItems();
-        dirty = true;
+        this.showItems();
         this.bindListEvents();
       }
     };
@@ -427,7 +384,7 @@ var source = [{
   $(document).ready(function () {
     $("#year").text(new Date().getFullYear());
     $(".students").listItems({
-      source: source
+      itemSelector: ".students__item"
     });
   });
 }
