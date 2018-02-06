@@ -74,8 +74,8 @@ body { min-height: 100%; padding-left: 0; }
 .active-placeholder { position: absolute; width: auto; max-width: 400px; background-color: white; padding: 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; left: 9px; top: 11px; font-weight: 300; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1; color: rgba(0, 0, 0, 0.54); -moz-transition: all 250ms ease-in; -o-transition: all 250ms ease-in; -webkit-transition: all 250ms ease-in; transition: all 250ms ease-in; pointer-events: none; }
 
 .students { padding: 21px 0; }
-.students__list .students__item { min-height: 72px; border-bottom: 1px solid #dbdbdb; *zoom: 1; }
-.students__list .students__item.last_item, .students__list .students__item:last-child { border-bottom: none; }
+.students__list .students__item { min-height: 72px; *zoom: 1; }
+.students__list .students__item:not(:last-child) { border-bottom: 1px solid #dbdbdb; }
 .students__list .students__item:after { content: ""; display: table; clear: both; }
 
 .student { position: relative; padding: 0 0 0 80px; /* In real life project I would surely use smth like sharp or ImageProcessor in order to avoid image blur for different-sized photo. But this time I used  that simple trick, which for sure wouldn't work good enough for all images  */ }

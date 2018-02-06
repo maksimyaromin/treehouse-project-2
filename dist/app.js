@@ -147,7 +147,7 @@
       },
       // Hide all items before control was builded
       hideItems: function hideItems() {
-        source.hide();
+        source.remove();
       },
       // Show items on selected page
       showItems: function showItems() {
@@ -160,15 +160,13 @@
         }
 
         for (var i = startIndex; i <= endIndex; i++) {
-          $(state.source[i]).show();
+          listContext.append(state.source[i]);
         }
 
         if (hasPager) {
           var markRange = pagerContext.find(".range");
           markRange.text("".concat(startIndex + 1, " - ").concat(endIndex + 1));
         }
-
-        listContext.find("".concat(options.itemSelector, ":visible")).last().addClass("last_item");
       },
       // Add possible events for the list (i.e. page transitions)
       bindListEvents: function bindListEvents() {

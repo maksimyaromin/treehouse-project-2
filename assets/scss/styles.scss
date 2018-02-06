@@ -106,11 +106,8 @@
 
     &__list &__item {
         min-height: 72px;
-        border-bottom: 1px solid $base-border-color;
-
-        &.last_item,
-        &:last-child {
-            border-bottom: none;
+        &:not(:last-child) {
+            border-bottom: 1px solid $base-border-color;
         }
         @include pie-clearfix;
     }

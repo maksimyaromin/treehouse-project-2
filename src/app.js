@@ -162,7 +162,7 @@
             },
             // Hide all items before control was builded
             hideItems() {
-                source.hide();
+                source.remove();
             },
             // Show items on selected page
             showItems() {
@@ -173,13 +173,12 @@
                     endIndex = lastIndex;
                 }
                 for (let i = startIndex; i <= endIndex; i++) {
-                    $(state.source[i]).show();
+                    listContext.append(state.source[i]);
                 }
                 if(hasPager) {
                     const markRange = pagerContext.find(".range");
                     markRange.text(`${startIndex + 1} - ${endIndex + 1}`)
                 }
-                listContext.find(`${options.itemSelector}:visible`).last().addClass("last_item");
             },
             // Add possible events for the list (i.e. page transitions)
             bindListEvents() {
